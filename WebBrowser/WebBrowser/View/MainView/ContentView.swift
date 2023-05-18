@@ -82,6 +82,12 @@ struct ContentView: View {
             .ignoresSafeArea(.all)
             .padding()
         }
+        .onAppear {
+            if let item = model.histories.last {
+                model.urlString = item.name
+                model.loadUrl()
+            }
+        }
         .ignoresSafeArea(.all)
         
     }
